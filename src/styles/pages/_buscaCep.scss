@@ -1,0 +1,52 @@
+.operacoes-produto-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    align-self: flex-start;
+    margin: 10px 0 0 0;
+  }
+  hr {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 2px solid #eee;
+  }
+  form {
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    margin: 4rem;
+    box-shadow: #00000022 1vw 1vw 5vw;
+    padding: 2rem;
+    border-radius: 2vw;
+    input {
+      border-radius: 4px;
+      height: 48px;
+      padding: 0 20px;
+      font-size: 16px;
+      &::placeholder {
+        color: #999;
+      }
+    }
+    a {
+      margin-top: 10px;
+      border: 0;
+      border-radius: 4px;
+      height: 48px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+      padding: 12px 20px 0 20px;
+    }
+  }
+  #deslogar {
+    background: #3498db;
+    width: 100px;
+    align-self: flex-end;
+    margin: -20px -20px 10px 0px;
+  }
+}

@@ -1,0 +1,10 @@
+version: "1"
+
+services:
+  react: # nome do primeiro serviço referente a FRONTEND usando React
+    container_name: reactjs
+    restart: always
+    build: "." # especificando o diretório do DockerFile
+    command: yarn start
+    ports:
+      - "3000:3000" # especificando o mapeamento da porta da máquina local com a do container docker
