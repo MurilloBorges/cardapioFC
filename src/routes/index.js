@@ -11,10 +11,9 @@ import {
 import { isAuthenticated } from '../services/authentication';
 
 // Pages
-import Login from '../pages/Login';
-import SignUp from '../pages/SignUp';
 import Error from '../pages/404';
 import BuscaCep from '../pages/BuscaCep';
+import Categories from '../pages/Categories';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest}
@@ -30,9 +29,8 @@ export default function routes() {
     <BrowserRouter>
       <Switch>
         <Route path="/404" exact component={Error} />
-        <Route path="/" exact component={Login} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/sign-up" exact component={SignUp} />
+        <Route path="/" exact component={Categories} />
+        <Route path="/categories" exact component={Categories} />
         <PrivateRoute path="/busca-cep" exact component={BuscaCep} />
 
         {/* Página not found */}

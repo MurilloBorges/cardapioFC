@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getToken } from './authentication';
 
 const api = axios.create({
-  baseURL: 'http://localhost:3333',
+  baseURL: 'https://www.thecocktaildb.com/api/json/v1/1',
 });
 
 api.interceptors.request.use(async (config) => {

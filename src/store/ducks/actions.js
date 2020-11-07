@@ -8,7 +8,7 @@ class StateLoader {
 
   loadState() {
     try {
-      const serializedState = localStorage.getItem('luizalabs:state');
+      const serializedState = localStorage.getItem('menuFC:state');
 
       if (serializedState === null) {
         return this.initializeState();
@@ -24,7 +24,7 @@ class StateLoader {
     this.state = state;
     try {
       const serializedState = JSON.stringify(this.state);
-      localStorage.setItem('luizalabs:state', serializedState);
+      localStorage.setItem('menuFC:state', serializedState);
     } catch (err) {
       console.log(err);
     }
