@@ -1,0 +1,28 @@
+.categories {
+  &-container {
+    margin: 10vh auto;
+    display: grid;
+    width: 80vw;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    box-shadow: #00000022 1vw 1vw 5vw;
+    border-radius: 1rem;
+  }
+  &-category {
+    margin: 2rem;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-shadow: #00000022 1vw 1vw 5vw;
+    padding: 2rem;
+    border-radius: 2vw;
+  }
+  svg {
+    height: 50%;
+    width: 50%;
+    margin: auto;
+  }
+}

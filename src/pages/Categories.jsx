@@ -22,6 +22,9 @@ export default function Categories({ history }) {
       try {
         dispatch(loading({ loading: true }));
         await api.get('list.php?c=list').then((res) => {
+          if (res.status === 200) {
+            setCategories(res.data.drinks);
+          }
           console.log(res);
         }).catch((error) => {
           toast.error(`Falha na requisição: ${error}`);
@@ -34,12 +37,16 @@ export default function Categories({ history }) {
       }
     }
 
-    await getCategories();
+    getCategories();
   }, []);
 
   return (
     <div className="categories-container">
-
+      {categories.map((data) => (
+        <div className="categories-category">
+          <p>{data.strCategory}</p>
+        </div>
+      ))}
     </div>
   );
 }
