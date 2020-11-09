@@ -51,7 +51,7 @@ export default function Modal({
             {header && (
               <div className="modal-header">
                 <div className="modal-title"><h2>{textTitle}</h2></div>
-                <span aria-hidden="true" className="close" onClick={handleClose}>
+                <span aria-hidden="true" className="modal-close" onClick={handleClose}>
                   <IconSVG
                     icon="close"
                     height="3rem"
