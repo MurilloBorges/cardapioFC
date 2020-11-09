@@ -1,12 +1,8 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable jsx-a11y/no-autofocus */
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
-import { isEmpty } from '../helpers/funcoes';
-import IconSVG from '../components/Ui/IconSVG';
 import api from '../services/api';
-import { login } from '../services/authentication';
 
 const loading = (payload) => ({
   type: 'LOADER', payload,
@@ -40,13 +36,25 @@ export default function Categories({ history }) {
     getCategories();
   }, []);
 
+  function handleSubmit(category) {
+    history.push({
+      pathname: '/drinks',
+      search: `?query=${category}`,
+    });
+  }
+
   return (
-    <div className="categories-container">
-      {categories.map((data) => (
-        <div className="categories-category">
-          <p>{data.strCategory}</p>
-        </div>
-      ))}
+    <div className="categories">
+      <h1>Categories</h1>
+      <div className="categories-container">
+        {categories.map((data, index) => (
+          <div className="categories-category" key={index.toString()}>
+            <button type="button" onClick={() => handleSubmit(data.strCategory)}>
+              {data.strCategory}
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -14,6 +14,7 @@ import { isAuthenticated } from '../services/authentication';
 import Error from '../pages/404';
 import BuscaCep from '../pages/BuscaCep';
 import Categories from '../pages/Categories';
+import Drinks from '../pages/Drinks';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest}
@@ -31,6 +32,7 @@ export default function routes() {
         <Route path="/404" exact component={Error} />
         <Route path="/" exact component={Categories} />
         <Route path="/categories" exact component={Categories} />
+        <Route path="/drinks" exact component={Drinks} />
         <PrivateRoute path="/busca-cep" exact component={BuscaCep} />
 
         {/* Página not found */}

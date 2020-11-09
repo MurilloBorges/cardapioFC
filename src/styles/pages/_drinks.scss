@@ -1,4 +1,4 @@
-.categories {
+.drinks {
   box-shadow: $menuFC-primary-color 0vw 0vw 4vw;
   border-radius: 1rem;
   margin: 10vh auto;
@@ -11,6 +11,11 @@
   h1 {
     color: $menuFC-primary-color;
   }
+  &-come-back {
+    position: absolute;
+    top: 12vh;
+    left: 10vw;
+  }
   &-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -18,7 +23,7 @@
     justify-content: center;
     align-items: center;
   }
-  &-category {
+  &-drink {
     margin: 2rem;
     min-width: 300px;
     display: flex;
@@ -34,10 +39,9 @@
       overflow: hidden;
       outline: none;
     }
-  }
-  svg {
-    height: 50%;
-    width: 50%;
-    margin: auto;
+
+    img {
+      width: 26.5rem;
+    }
   }
 }
