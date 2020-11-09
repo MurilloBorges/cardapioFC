@@ -1,0 +1,129 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1012;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  &--checked {
+    display: block;
+  }
+
+  &-dialog {
+    position: relative;
+    width: auto;
+    margin: 0.5rem;
+    pointer-events: none;
+    max-width: none;
+  }
+
+  &-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    color: #000;
+    pointer-events: auto;
+    background-color: $text-light;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 1.2rem;
+    box-shadow: none;
+    outline: none;
+    margin: 4% auto;
+    padding: 15px;
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.2rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+    border-radius: 1rem;
+
+    span {
+      font-family: "roboto bold", sans-serif;
+
+      img {
+        width: 30px !important;
+      }
+    }
+    background-color: $menuFC-primary-color;
+  }
+
+  &-title {
+    h2 {
+      margin-bottom: 0;
+      font-family: "roboto bold", sans-serif;
+      color: $text-light;
+      font-weight: bold;
+    }
+  }
+  &-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 2rem 1rem;
+    color: #585757;
+  }
+
+  &-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2rem 1rem 0.5rem 1rem;
+    border-top: 1px solid #dee2e6;
+    border-radius: 1rem;
+
+    > :not(:first-child) {
+      margin-left: 0.25rem;
+    }
+    > :not(:last-child) {
+      margin-right: 0.25rem;
+    }
+  }
+}
+
+.close {
+  color: $text-light;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: lighten(#dc3545, 10);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: $screen-xsm) {
+  .modal {
+    width: 100vw;
+    &-content {
+      width: 84vw;
+      border-radius: 0.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-m) {
+  .modal {
+    width: 100vw;
+    &-content {
+      width: 50vw;
+      border-radius: 1.2rem;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-m) {
+}
+
+@media screen and (min-width: $screen-l) {
+}

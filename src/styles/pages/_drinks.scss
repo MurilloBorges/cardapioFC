@@ -1,47 +1,70 @@
-.drinks {
-  box-shadow: $menuFC-primary-color 0vw 0vw 4vw;
-  border-radius: 1rem;
-  margin: 10vh auto;
-  width: 80vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #f5f5f5;
-  h1 {
-    color: $menuFC-primary-color;
-  }
-  &-come-back {
-    position: absolute;
-    top: 12vh;
-    left: 10vw;
-  }
-  &-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    justify-content: center;
-    align-items: center;
-  }
-  &-drink {
-    margin: 2rem;
-    min-width: 300px;
+@media screen and (min-width: $screen-xsm) {
+  .drinks {
+    box-shadow: $menuFC-primary-color 0vw 0vw 4vw;
+    border-radius: 1rem;
+    margin: 4vh auto 10vh;
+    width: 90vw;
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
-    box-shadow: #00000022 1vw 1vw 5vw;
-    padding: 2rem;
-    border-radius: 2vw;
-
-    button {
-      border: none;
-      background-color: transparent;
-      overflow: hidden;
-      outline: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    h1 {
+      color: $menuFC-primary-color;
     }
+    &-come-back {
+      position: absolute;
+      top: 6vh;
+      left: 10vw;
+    }
+    &-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    &-drink {
+      margin: 2rem;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      box-shadow: #00000022 1vw 1vw 5vw;
+      padding: 2rem;
+      border-radius: 2vw;
 
-    img {
-      width: 26.5rem;
+      button {
+        border: none;
+        background-color: transparent;
+        overflow: hidden;
+        outline: none;
+        color: #666666;
+        font-weight: bold;
+        margin: 3vh auto 0;
+        svg {
+          margin: auto 1vw;
+        }
+      }
+
+      img {
+        width: 26.5rem;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $screen-m) {
+  .drinks {
+    width: 80vw;
+    margin: 10vh auto;
+    &-come-back {
+      top: 12vh;
+    }
+    &-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
     }
   }
 }
