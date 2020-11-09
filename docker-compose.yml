@@ -1,4 +1,4 @@
-version: "1"
+version: "3"
 
 services:
   react: # nome do primeiro serviço referente a FRONTEND usando React

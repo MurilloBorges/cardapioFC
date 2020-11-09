@@ -66,3 +66,5 @@ Com esta aplicação irei poder visualizar os Drinks disponíveis no cardápio e
 > > ctrl + c
 
 > > sudo docker-compose down
+
+### URL para acessar o projeto http://localhost:3000/categories ou http://localhost:3000

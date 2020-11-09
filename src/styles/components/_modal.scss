@@ -86,6 +86,10 @@
       > :not(:last-child) {
         margin-right: 0.25rem;
       }
+
+      button {
+        padding: 1rem 3rem;
+      }
     }
     &-close {
       font-size: 28px;

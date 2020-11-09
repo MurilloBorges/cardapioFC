@@ -12,6 +12,27 @@
     h1 {
       color: $menuFC-primary-color;
     }
+    &-reload {
+      border: none;
+      background-color: transparent;
+      overflow: hidden;
+      outline: none !important;
+      position: absolute;
+      top: 6.5vh;
+      right: 8vw;
+    }
+    &-search {
+      margin: 0rem 3rem 1rem;
+      align-self: flex-end;
+      input {
+        padding: 1rem;
+        border: none;
+        border-radius: 3rem;
+        font-size: 16px;
+        font-weight: bold;
+        outline: none;
+      }
+    }
     &-container {
       display: flex;
       flex-direction: column;
@@ -20,7 +41,7 @@
     }
     &-category {
       margin: 2rem;
-      min-width: 300px;
+      min-width: 26rem;
       display: flex;
       flex-direction: column;
       background-color: #ffffff;
@@ -44,10 +65,22 @@
   }
 }
 
+@media screen and (min-width: $screen-smx) {
+  .categories {
+    &-category {
+      min-width: 300px;
+    }
+  }
+}
+
 @media screen and (min-width: $screen-m) {
   .categories {
     width: 80vw;
     margin: 10vh auto;
+    &-reload {
+      top: 12vh;
+      right: 12vw;
+    }
     &-container {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;

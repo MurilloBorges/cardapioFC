@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
@@ -21,6 +21,7 @@ const setCategories = (payload) => ({
 export default function Categories({ history }) {
   const storage = useSelector((store) => store);
   const dispatch = useDispatch();
+  const [search, setSearch] = useState('');
 
   async function getCategories() {
     try {
@@ -66,10 +67,29 @@ export default function Categories({ history }) {
   return (
     <div className="categories">
       <h1>Categories</h1>
+      <button type="button" className="categories-reload" data-cy="button-reload" onClick={() => getCategories()}>
+        <IconSVG
+          icon="refresh"
+          height="4rem"
+          width="4rem"
+          fill="#224074"
+        />
+      </button>
+      <div className="categories-search">
+        <input
+          type="text"
+          placeholder="Search"
+          data-cy="input-search"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
       <div className="categories-container">
-        {storage.categories.map((data, index) => (
+        {storage.categories.filter(
+          (e) => e.strCategory.toUpperCase().includes(search.toUpperCase()),
+        ).map((data, index) => (
           <div className="categories-category" key={index.toString()}>
-            <button type="button" onClick={() => handleSubmit(data.strCategory)}>
+            <button type="button" data-cy="button-get-drinks" onClick={() => handleSubmit(data.strCategory)}>
               <IconSVG
                 icon="search"
                 height="3rem"
