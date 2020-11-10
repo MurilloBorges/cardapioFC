@@ -4,24 +4,47 @@
 
 describe('Action happy path application', () => {
   beforeEach(() => {
-    cy.fixture('usuario.json').as('usuario');
-    cy.fixture('cep.json').as('cep');
+    cy.fixture('categories.json').as('category');
+    cy.fixture('drinks.json').as('drink');
   });
 
-  it('Realizando teste de autenticação', function () {
-    cy.visit('/login');
-    const { usuario } = this;
-    cy.login(usuario.email, usuario.senha);
+  it('Realizando teste de carregamento de categorias', function () {
+    cy.log('Testando o carregamento das categorias');
+    cy.visit('/categories');
+    const { category } = this;
+
+    cy.server();
+    cy.route({
+      method: 'GET',
+      url: 'list.php?c=list',
+    }).as('getCategories');
+
+    cy.dataCy('button-get-drinks').contains(category.valid.category).click();
   });
 
-  it('Realizando testes na funcionalidade de busca CEP', function () {
-    const { cep } = this;
-    cy.log('Testando o CEP válido');
-    cy.buscaCEP(cep.valid);
+  it('Realizando teste de carregamento dos drinks', function () {
+    cy.log('Testando o carregamento dos drinks');
+    const { drink, category } = this;
+    cy.server();
+    cy.route({
+      method: 'GET',
+      url: `filter.php?c=${category.valid.category}`,
+    }).as('getDrinks');
+
+    cy.dataCy('button-details').contains(drink.valid.drink).click({ force: true });
   });
 
-  it('Realizando teste de deslogar o usuário', () => {
-    cy.log('Testando o deslogar do usuário');
-    cy.dataCy('deslogar').click({ force: true });
+  it('Realizando teste de carregamento dos detalhes dos drinks', function () {
+    cy.log('Testando o carregamento dos detalhes dos drinks');
+    const { drink } = this;
+
+    cy.server();
+    cy.route({
+      method: 'GET',
+      url: `search.php?s=${drink.valid.drink}`,
+    }).as('getDrinkDetails');
+
+    cy.dataCy('button-ok').click({ force: true });
+    cy.dataCy('come-back').click({ force: true });
   });
 });

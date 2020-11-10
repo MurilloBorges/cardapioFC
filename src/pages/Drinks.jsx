@@ -45,9 +45,8 @@ export default function Drinks({ history }) {
   async function handleSubmit(drink) {
     try {
       dispatch(loading({ loading: true }));
-      await api.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`).then((res) => {
+      await api.get(`search.php?s=${drink}`).then((res) => {
         if (res.status === 200) {
-          console.log(res.data.drinks[0]);
           setDrinkDetail({
             ...res.data.drinks[0],
           });
@@ -154,7 +153,7 @@ export default function Drinks({ history }) {
         ).map((data, index) => (
           <div className="drinks-drink" key={index.toString()}>
             <img src={data.strDrinkThumb} alt={`drink-${index.toString()}`} />
-            <button type="button" onClick={() => handleSubmit(data.strDrink)}>
+            <button type="button" data-cy="button-details" onClick={() => handleSubmit(data.strDrink)}>
               <IconSVG
                 icon="search"
                 height="3rem"
