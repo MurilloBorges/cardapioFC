@@ -3,6 +3,7 @@ Expor um serviço de cardápio online onde o App deve ter o seguinte fluxo Categ
 
 Com esta aplicação irei poder visualizar os Drinks disponíveis no cardápio e seus detalhes, como foto, composição, etc.
 
+## Aplicação responsiva para mobile
 
 # Tecnologias utilizadas
 - Para o frontend foi utilizado a ferramenta ReactJS;
